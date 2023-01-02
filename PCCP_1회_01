@@ -1,0 +1,29 @@
+import java.util.*;
+class Solution {
+    public String solution(String input_string) {
+        String answer = "";
+        HashMap<String,Integer> map = new HashMap<>();
+        List<String> list = new ArrayList<>();
+        for(int i=0;i<input_string.length();i++){
+            char tempChar = input_string.charAt(i);
+            String temp = Character.toString(tempChar);
+            if(map.get(temp)!=null) {
+                int j = map.get(temp);
+                if(!list.contains(temp)&&i-j>1) list.add(temp);
+            }
+            map.put(temp,i);
+        }
+        String[] ans = new String[list.size()];
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<list.size();i++){
+            ans[i] = list.get(i);
+        }
+        Arrays.sort(ans);
+        for(int i=0;i<list.size();i++){
+            sb.append(ans[i]);
+        }
+        answer = sb.toString();
+        if(answer.length()==0) answer ="N";
+        return answer;
+    }
+}
