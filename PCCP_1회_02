@@ -1,0 +1,31 @@
+import java.util.*;
+class Solution {
+    public int max;
+    public int solution(int[][] ability) {
+        int person = ability.length; // 학생 수
+        int act = ability[0].length; // 종목 수
+        int[] result = new int[act];
+        boolean[] visited = new boolean[person];
+        perm(result, ability, visited, act, 0, person);
+        return max;
+    }
+    public void perm(int[] result, int[][] ability, boolean[] visited, int act, int depth, int person){
+        if(act == depth){
+            int sum = 0;
+            for(int i=0; i<result.length; i++){
+                int temp = result[i];
+                sum += ability[temp][i];
+            }
+            if(max < sum) max = sum;
+            return;
+        }
+        for(int i=0;i<person;i++){
+            if(!visited[i]){
+                visited[i] = true;
+                result[depth] = i;
+                perm(result, ability, visited, act, depth+1, person);
+                visited[i] = false;
+            }
+        }
+    }
+}
