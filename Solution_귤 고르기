@@ -1,0 +1,32 @@
+import java.util.*;
+
+// 각 tangerine에 있는 것 귤 크기 별로 개수 확인
+// 개수가 많은 아이들 순으로 확인하여 개수 확인
+
+class Solution {
+    public int solution(int k, int[] tangerine) {
+        int answer = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i=0;i<tangerine.length;i++){
+            Integer temp = map.get(tangerine[i]);
+            if(temp==null) map.put(tangerine[i],1);
+            else map.put(tangerine[i],temp+1);
+        }
+        // Map -> array
+        Collection<Integer> values = map.values();
+        Integer[] arr = values.toArray(new Integer[0]);
+        Arrays.sort(arr);
+        for(int i=0;i<arr.length;i++){
+            Integer temp = arr[arr.length-i-1];
+            if(k <= temp) {
+                answer++;
+                break;
+            }
+            else {
+                k -= temp;
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
