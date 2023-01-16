@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class Main_1003_김유완 {
 		public static void main(String[] args) throws NumberFormatException, IOException {
+			
 		// 2이면 1+0이니까 1 1번 0 1번
 		// 3이면 2+1=1+0+1 이니까 1 2번 0 1번
 		// N은 40보다 작거나 같은 자연수 또는 0
