@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public int[][] solution(int[][] arr1, int[][] arr2) {
+        // 3*2 2*2 3*2
+        // 1 4     3 3     15 15
+        // 3 2  *  3 3  =  15 15
+        // 4 1             15 15
+        // 3*3 3*3 3*3
+        int arr1row = arr1.length;
+        int arr1col = arr1[0].length;
+        int arr2row = arr2.length;
+        int arr2col = arr2[0].length;
+        int[][] answer = new int[arr1row][arr2col];
+        for(int i=0;i<arr1row;i++){
+            for(int j=0;j<arr2col;j++){
+                int sum = 0;
+                for(int k=0;k<arr1col;k++){
+                    sum += arr1[i][k]*arr2[k][j];
+                }
+                answer[i][j] = sum;
+            }
+        }
+        return answer;
+    }
+}
