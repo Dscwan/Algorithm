@@ -1,0 +1,54 @@
+import java.util.*;
+class Solution {
+    public int solution(int[][] scores) {
+        int answer = 1;
+        int ho1 = scores[0][0];
+        int ho2 = scores[0][1];
+        int hoScore = ho1 + ho2;
+        if(scores.length == 1) return 1; // 테스트 1 인 부분 해결 - scores길이 1인 거 체크
+        // 전체 오름차순
+        Arrays.sort(scores, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] o1, int[] o2){
+                return o1[0]==o2[0] ? o1[1]-o2[1] : o1[0]-o2[0];
+            }
+        });
+        List<Integer> list = new ArrayList<>(); // idx
+        HashSet<Integer> set = new HashSet<>(); 
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int n = -1;
+        for(int i=0;i<scores.length;i++){
+            boolean flag = true;
+            for(int j=scores.length-1;j>=i+1;j--){
+                if(hoScore > scores[i][0]+scores[i][1]){ // 테스트 25 시간 초과 부분 해결 - 애초에 완호보다 합이 작으면 필요없으니까 제외
+                    flag = false;
+                    break;
+                }
+                if(scores[i][0] == scores[j][0]) break; // 테스트 21, 24 시간 초과 부분 해결
+                if(scores[i][0] < scores[j][0]){
+                    if(scores[i][1]<scores[j][1]) flag = false;
+                }
+                if(!flag) break;
+            }
+            if(!flag) list.add(i);
+            else {
+                int sum = scores[i][0]+scores[i][1];
+                set.add(sum);
+                if(map.get(sum)==null) map.put(sum,1);
+                else map.put(sum,map.get(sum)+1);
+                if(scores[i][0] == ho1 && scores[i][1] == ho2 && n == -1) n = i;
+            }
+        }
+        if(n != -1) {
+            int size = map.size();
+            list = new ArrayList<>(set);
+            Collections.sort(list);
+            for(int i=0;i<size;i++){
+                if(list.get(size-1-i)==hoScore) break;
+                else answer += map.get(list.get(size-1-i));
+            }
+        }
+        else answer = -1;
+        return answer;
+    }
+}
