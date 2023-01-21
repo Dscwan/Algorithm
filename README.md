@@ -9,4 +9,4 @@
 프로그래머스 시소 짝꿍 https://school.programmers.co.kr/learn/courses/30/lessons/152996
 
 ## 2023.01.21
-프로그래머스
+프로그래머스 인사고과 https://school.programmers.co.kr/learn/courses/30/lessons/152995
