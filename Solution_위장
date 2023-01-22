@@ -1,0 +1,41 @@
+import java.util.*;
+class Solution {
+    public static int answer;
+    public int solution(String[][] clothes) {
+        answer = 0;
+        HashMap<String, Integer> map = new HashMap<>();
+        for(int i=0;i<clothes.length;i++){
+            if(map.get(clothes[i][1])==null) map.put(clothes[i][1],1);
+            else map.put(clothes[i][1],map.get(clothes[i][1])+1);
+        }
+        // 그냥 다 곱하고 -1? 입든 안입든 곱한 후 -1?
+        int num = 1;
+        Set<String> set = map.keySet();
+        for(String temp : set){
+            num *= (map.get(temp) + 1);
+        }
+        answer += num - 1;
+        return answer;
+    }
+    // 시간 초과 - 조합 말고 ..
+    // public void comb(int[] arr, boolean[] visited, int depth, int r, int start, boolean flag){
+    //     if(depth == r){
+    //         int num = 1;
+    //         int number = 1;
+    //         for(int i=0;i<arr.length;i++){
+    //             if(visited[i]) num *= arr[i];
+    //             else number *= arr[i];
+    //         }
+    //         if(flag&&r==arr.length/2) answer += num;
+    //         else answer = answer + num + number;
+    //         return;
+    //     }
+    //     for(int i=start;i<arr.length;i++){
+    //         if(!visited[i]){
+    //             visited[i] = true;
+    //             comb(arr,visited,depth+1,r,i,flag);
+    //             visited[i] = false;
+    //         }
+    //     }
+    // }
+}
