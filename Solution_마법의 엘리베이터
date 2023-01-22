@@ -5,7 +5,7 @@ class Solution {
         while(true){
             if(storey<=0) break;
             n = storey%10;
-            if(n>5 || (n==5&&(storey/10)%10>=5)){
+            if(n>5 || (n==5&&(storey/10)%10>=5)){ // 665체크 해보기
                 answer += (10-n);
                 storey /= 10;
                 storey ++;
