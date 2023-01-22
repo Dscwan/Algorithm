@@ -1,0 +1,32 @@
+import java.util.*;
+class Solution {
+    public int solution(int[] elements) {
+        int answer = 0;
+        // elements길이 홀수인경우 짝수인 경우
+        int length = elements.length;
+        HashSet<Integer> set = new HashSet<>();
+        int[] arr = new int[length*2]; // 길이 2배로 늘려두기
+        int sum = 0; // 총합
+        for(int i=0;i<length*2;i++){
+            if(i<length) {
+                arr[i] = elements[i];
+                sum += arr[i];
+            }
+            else arr[i] = elements[i-length];
+        }
+        int cnt = length;
+        if(cnt%2==0) cnt++;
+        for(int i=1;i<=cnt/2;i++){ // 총길이 5일때 길이1,길이4인 경우는 총합에서 서로 빼면 나오니까 반틈만
+            for(int j=0;j<length;j++){
+                int num = 0;
+                for(int k=j;k<j+i;k++){
+                    num += arr[k];
+                }
+                set.add(num);
+                set.add(sum-num);
+            }
+        }
+        answer = set.size() + 1; // elements길이만큼은 1개 뿐이니까
+        return answer;
+    }
+}
