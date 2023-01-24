@@ -25,3 +25,5 @@
 
 ## 2023.01.24
 프로그래머스 멀리 뛰기 https://school.programmers.co.kr/learn/courses/30/lessons/12914
+
+프로그래머스 점프와 순간 이동 https://school.programmers.co.kr/learn/courses/30/lessons/12980
