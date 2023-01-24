@@ -27,3 +27,5 @@
 프로그래머스 멀리 뛰기 https://school.programmers.co.kr/learn/courses/30/lessons/12914
 
 프로그래머스 점프와 순간 이동 https://school.programmers.co.kr/learn/courses/30/lessons/12980
+
+프로그래머스 정수 삼각형 https://school.programmers.co.kr/learn/courses/30/lessons/43105
