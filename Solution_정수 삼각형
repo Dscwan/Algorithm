@@ -1,0 +1,20 @@
+import java.util.*;
+class Solution {
+    public int solution(int[][] triangle) {
+        int answer = 0;
+        int length = triangle.length;
+        int[][] dp = new int[length][length];
+        dp[0][0] = triangle[0][0];
+        for(int i=1;i<length;i++){
+            for(int j=0;j<=i;j++){
+                if(j==0) dp[i][j] = dp[i-1][j] + triangle[i][j];
+                else if(j==triangle[i].length-1) dp[i][j] = dp[i-1][j-1] + triangle[i][j];
+                else dp[i][j] = (int)Math.max(dp[i-1][j-1] + triangle[i][j], dp[i-1][j] + triangle[i][j]);
+            }
+        }
+        int[] arr = dp[length-1]; // 마지막에서 제일 최댓값
+        Arrays.sort(arr);
+        answer = arr[length-1];
+        return answer;
+    }
+}
