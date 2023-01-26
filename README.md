@@ -32,3 +32,6 @@
 
 ## 2023.01.25
 프로그래머스 2Xn 타일링 https://school.programmers.co.kr/learn/courses/30/lessons/12900
+
+## 2023.01.26
+프로그래머스 최고의 집합 https://school.programmers.co.kr/learn/courses/30/lessons/12938
