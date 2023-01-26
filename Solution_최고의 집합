@@ -1,0 +1,21 @@
+class Solution {
+    public int[] solution(int n, int s) {
+        int[] answer = new int[n];
+        if(n > s) { // 못나오는경우
+            answer = new int[1];
+            answer[0] = -1;
+            return answer;
+        }
+        // 4 4 6 vs 4 5 5 무조건 차이가 적도록!
+        int num = s/n;
+        int plus = s%n;
+        for(int i=0;i<n;i++){
+            answer[n-1-i] = num;
+            if(plus>0) {
+                answer[n-1-i] += 1;
+                plus--;
+            }
+        }
+        return answer;
+    }
+}
