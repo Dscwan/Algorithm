@@ -1,5 +1,7 @@
 # Algorithm
 
+## 2023.01.30
+프로그래머스 소수 찾기 https://school.programmers.co.kr/learn/courses/30/lessons/42839
 
 ## 2023.01.28
 프로그래머스
