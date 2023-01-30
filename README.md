@@ -1,13 +1,13 @@
 # Algorithm
 
 ## 2023.01.30
-프로그래머스 소수 찾기 https://school.programmers.co.kr/learn/courses/30/lessons/42839
+프로그래머스 게임 맵 최단거리 https://school.programmers.co.kr/learn/courses/30/lessons/1844
 
 ## 2023.01.29
-프로그래머스 k진수에서 소수 개수 구하기 https://school.programmers.co.kr/learn/courses/30/lessons/92335
+프로그래머스 소수 찾기 https://school.programmers.co.kr/learn/courses/30/lessons/42839
 
 ## 2023.01.28
-프로그래머스
+프로그래머스 k진수에서 소수 개수 구하기 https://school.programmers.co.kr/learn/courses/30/lessons/92335
 
 ## 2023.01.27
 프로그래머스 가장 큰 수 https://school.programmers.co.kr/learn/courses/30/lessons/42746
